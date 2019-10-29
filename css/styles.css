@@ -1,0 +1,7 @@
+body {
+  margin: 25px;
+}
+
+.work-responses, .fun-responses {
+  display: none;
+}

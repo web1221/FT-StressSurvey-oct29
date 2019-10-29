@@ -9,18 +9,10 @@ var mentalHealthArray = [];
 $(document).ready(function(){
   $("form#stressTest").submit(function(event){
     event.preventDefault();
-    // var add = function(number){
-    //   var total = 0;
-    //   total += number;
-    // }
-
     $("input:checkbox[name=mental-symptoms]:checked").each(function(){
       var mentalSymptoms = parseInt($(this).val());
       mentalHealthArray.push(mentalSymptoms);
       console.log("mentalHealthArray: ", mentalHealthArray);
-      // console.log(counter(mentalSymptoms));
-      // console.log("typeof mentalSymptoms: ", typeof(mentalSymptoms));
-      // console.log("Mental Symptons Value: ", (add(mentalSymptoms)));
       $(".mentalSymptoms").append(mentalSymptoms + "<br>");
 
     });
@@ -34,6 +26,7 @@ $(document).ready(function(){
       var relaxationTechniques = parseInt($(this).val());
       mentalHealthArray.push(relaxationTechniques);
       $('.relaxationTechniques').append(relaxationTechniques + "<br>");
-    })
+    });
+    $('.results').append(counter(mentalHealthArray) + "<br>")
   });
 });
